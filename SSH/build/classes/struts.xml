@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+  <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+   
+  <constant name="struts.objectFactory" value="spring"/>
+   
+  <package name="basicstruts" extends="struts-default" >
+  
+  <action name="login" class="loginbean">
+  <result name="success">WEB-INF/login.jsp</result>
+  </action>
+  
+  
+  
+  
+  <action name="dl" class="loginbean" method="dl">
+   <result name="管理员">WEB-INF/manager.jsp</result>
+   <result name="学生">WEB-INF/student.jsp</result>
+   <result name="教师">WEB-INF/teacher.jsp</result>
+   <result name="input">WEB-INF/login.jsp</result>
+  </action>  
+   
+   <action name="manager" class="manager">
+   <result name="M_student">WEB-INF/M_Student.jsp</result>
+   <result name="M_teacher">WEB-INF/M_Teacher.jsp</result>
+   <result name="M_course">WEB-INF/M_Course.jsp</result>
+   <result name="M_selectcourse">WEB-INF/M_SelectCourse.jsp</result>
+      <result name="input">WEB-INF/error.jsp</result>
+   </action>
+   
+   <action name="teacher" class="teacher">
+   <result name="T_score">WEB-INF/T_score.jsp</result>
+      <result name="input">WEB-INF/error.jsp</result>
+   </action>
+   
+   <action name="student" class="student">
+   <result name="S_score">WEB-INF/S_score.jsp</result>
+      <result name="input">WEB-INF/error.jsp</result>
+   </action>
+   
+   <action name="editpassword" class="loginbean" method="editpass">
+   </action> 
+   <action name="Studentmessage" class="studentbean" method="output">
+   </action>
+   <action name="studentdel" class="studentbean" method="del">
+   </action>
+   <action name="Studentadd" class="studentbean" method="add">
+   </action>
+   <action name="Studentupdate" class="studentbean" method="update">
+   </action>
+   <action name="Teachermessage" class="teacherbean" method="output">
+   </action>
+      <action name="Teacherupdate" class="teacherbean" method="update">
+   </action>
+      <action name="Teacheradd" class="teacherbean" method="add">
+   </action>
+    <action name="Teacherdel" class="teacherbean" method="del">
+   </action>
+    <action name="Cnomessage" class="cnobean" method="output">
+   </action>
+      <action name="Cnoupdate" class="cnobean" method="update">
+   </action>
+      <action name="Cnoadd" class="cnobean" method="add">
+   </action>
+   <action name="Cnodel" class="cnobean" method="del">
+   </action>
+    <action name="Selshow" class="selectbean" method="output">
+   </action>
+    <action name="Selq" class="selectbean" method="selq">
+   </action>
+    <action name="Seladd" class="selectbean" method="add">
+   </action>
+    <action name="Seldel" class="selectbean" method="del">
+   </action>
+   <action name="Scorecheck" class="scorebean" method="Scocheck">
+   </action>
+    <action name="Scoreoutput" class="scorebean" method="output">
+   </action>
+   <action name="Scoreadd" class="scorebean" method="add">
+   </action>
+    <action name="Scorecomfirm" class="scorebean" method="comfirm">
+   </action>
+   <action name="Scorequery" class="scorebean" method="enquire">
+   </action>
+</package>
+</struts>

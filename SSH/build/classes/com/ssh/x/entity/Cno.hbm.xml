@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.ssh.x.entity">
+	<class name="Cno" table="Cno">
+		<id name="Cno" column="Cno">
+			<generator class="assigned">
+			</generator>
+		</id>
+		<property name="Cname" not-null="true"/>
+		<property name="GPA"   not-null="true"/>
+		<property name="Tno" />
+		<property name="flag" not-null="true"/>
+		<property name="Tname"/>
+	</class>
+	
+</hibernate-mapping>
