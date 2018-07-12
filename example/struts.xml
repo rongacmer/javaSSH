@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+ <struts>
+  <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+  <constant name="struts.multipart.maxSize" value="20000000"></constant>
+  <constant name="struts.custom.i18n.resources" value="app"></constant>
+   <package name="basicstruts" extends="json-default" >
+  
+  <action name="test" class="com.action.Testaction" method="test">
+  <result type="json"></result>
+    </action>
+    
+  <action name="upPic" class="com.action.UpPicAction">
+  	<param name="savePath">/uploadFiles</param>
+  	<result name="success">hello.jsp</result>
+  	<result name="input">uppic.jsp</result>
+  	<interceptor-ref name="fileUpload">
+  		<param name="allowedTypes">image/bmp,image/x-png,image/gif,image/jpg,image/jpeg</param>
+  		<param name="maximumSize">81101</param>
+  	</interceptor-ref>
+  	<interceptor-ref name="defaultStack"></interceptor-ref>
+  </action>
+  </package>
+  </struts>
+  
